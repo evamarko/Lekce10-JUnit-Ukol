@@ -1,5 +1,6 @@
 package cz.engeto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TestValue {
@@ -16,7 +17,7 @@ public class TestValue {
     }
 
     public List<Double> getTestList() {
-        return testList;
+        return new ArrayList<>(testList);
     }
 
     public void setTestList(List<Double> testList) {

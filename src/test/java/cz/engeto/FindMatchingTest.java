@@ -14,12 +14,13 @@ public class FindMatchingTest {
 
     @RepeatedTest(2)
     public void matchingTest(RepetitionInfo repetitionInfo) {
-        List <Double> testList = testValue.get(repetitionInfo.getCurrentRepetition()).getTestList();
+        int index = repetitionInfo.getCurrentRepetition() - 1;
+        List <Double> testingList = testValue.get(index).getTestList();
         Double testResult = Find.findMatching(
-                testList,
-                testValue.get(repetitionInfo.getCurrentRepetition()).getMinTreshold(),
-                testValue.get(repetitionInfo.getCurrentRepetition()).getMaxTreshold());
-        Assertions.assertEquals(testValue.get(repetitionInfo.getCurrentRepetition()).getExpectedValue(), testResult);
+                testingList,
+                testValue.get(index).getMinTreshold(),
+                testValue.get(index).getMaxTreshold());
+        Assertions.assertEquals(testValue.get(index).getExpectedValue(), testResult);
     }
 
  /*   @Test
